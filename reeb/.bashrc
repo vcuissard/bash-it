@@ -60,4 +60,9 @@ alias finder_show_files='defaults write com.apple.finder AppleShowAllFiles YES; 
 export EDITOR=emacs
 
 # SSH Key
-ssh-add -K
+# Add SSH Key
+SSH_ADD_OPT=
+if [ `uname` = "Darwin" ]; then
+    SSH_ADD_OPT="-K"
+fi
+ssh-add $SSH_ADD_OPT
